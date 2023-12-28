@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(Void... params) {
             try {
-                socket = new Socket("192.168.35.149", 14321);
+                socket = new Socket("192.168.35.149", 54321);
 
                 // MakeType00~등을 이용해서 객체 생성 << 이건 서버로 데이터를 보내기위해 테스트한 것
                 Make sendData0 = new Make_User((byte) 0x4, (byte) 0x01, 0, 3.0f, 4.0f, 5.0f,
@@ -45,8 +45,13 @@ public class MainActivity extends AppCompatActivity {
                 Make sendData2 = new Make_Circle((byte) 0x05, (byte) 0x01, (byte) 0x00, (byte) 0x00, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
                         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
                 Make sendData3 = new Make_Debug((byte) 0x07, (byte) 0x00, "Debug 확인");
-                Make sendData4 = new Make_Set((byte)0x08, (byte)0x00, 0,0,0,0,0,0,0,0,0,0,0,(byte) 0x00,(byte) 0x00,
-                        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,(byte) 0x00);
+                Make sendData4 = new Make_Set((byte) 0x08, (byte) 0x0A, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f,
+                        (byte) 0x00, (byte) 0x00, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f,
+                        0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, (byte) 0x00,
+                        0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, 0.0f, (byte) 0x00,
+                        (byte) 0x00, (byte) 0x00, 0.0f, 0.0f, 0.0f, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00,
+                        (byte) 0x00, (byte) 0x00, (byte) 0x00, 0.0f, 0.0f);
+
 
 
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
